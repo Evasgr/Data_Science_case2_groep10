@@ -6,10 +6,10 @@ import plotly.express as px
 import subprocess
 import zipfile
 
-command = "kaggle datasets download -d thedevastator/higher-education-predictors-of-student-retention"
-result = subprocess.run(command, shell=True, capture_output=True, text=True)
-with zipfile.ZipFile('higher-education-predictors-of-student-retention.zip', 'r') as zip_ref:
-    zip_ref.extractall()
+# command = "kaggle datasets download -d thedevastator/higher-education-predictors-of-student-retention"
+# result = subprocess.run(command, shell=True, capture_output=True, text=True)
+# with zipfile.ZipFile('higher-education-predictors-of-student-retention.zip', 'r') as zip_ref:
+#     zip_ref.extractall()
 
 # Titel van de applicatie
 st.title("Slagingsstatus van studenten aan de hand van verschillende variabelen")
@@ -26,7 +26,7 @@ if selected_tab == "Geslacht":
     st.write("Gebruik de checkbox om te filteren op geslacht (vrouw en/of man).")
 
     # Inladen dataset
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('higher-education-predictors-of-student-retention\\dataset.csv')
 
     # Vertaal de Target-categorieën naar Nederlands
     target_translation = {
@@ -94,7 +94,7 @@ elif selected_tab == "Geslacht en leeftijd":
     st.write("Gebruik de slider om een bepaalde leeftijdscategorie te selecteren.")
 
     # Inladen dataset
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('higher-education-predictors-of-student-retention\\dataset.csv')
 
     # Voeg checkboxes toe voor gender
     show_female = st.checkbox("Toon Vrouw", value=True)
@@ -157,7 +157,7 @@ elif selected_tab == "Avond/middag aanwezigheid":
     st.write("Gebruik de checkbox om te filteren op aanwezigheid (avond en/of middag).")
     
     # Inladen dataset
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('higher-education-predictors-of-student-retention\\dataset.csv')
     
     # Vertaal de Target-categorieën naar Nederlands
     target_translation = {
@@ -224,7 +224,7 @@ elif selected_tab == "Opleiding moeder/vader":
     st.write("Gebruik de checkbox om te filteren op ouder (moeder en/of vader).")
 
     # Inladen dataset
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('higher-education-predictors-of-student-retention\\dataset.csv')
    
     # Vertaal de Target-categorieën naar Nederlands
     target_translation = {
@@ -316,7 +316,7 @@ elif selected_tab == "Cijfers per semester met wel/geen schulden":
     st.write("Gebruik de checkbox om te filteren op geslacht (vrouw en/of man).")
     
     # Inladen dataset
-    df = pd.read_csv('dataset.csv')
+    df = pd.read_csv('higher-education-predictors-of-student-retention\\dataset.csv')
 
     import plotly.graph_objects as go
     # Maakt een checkbox
